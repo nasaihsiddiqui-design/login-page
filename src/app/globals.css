@@ -1,0 +1,268 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #171717;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.left-panel {
+  background: #fff;
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #dedede;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand {
+  position: absolute;
+  top: 32px;
+  left: 40px;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #7c3aed, #ec4899, #fbbf24);
+}
+
+.left-panel h1 {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 400;
+  line-height: 1.65;
+  margin-bottom: 30px;
+}
+
+.left-panel h1 span {
+  color: #ed3b85;
+}
+
+.illustration {
+  position: relative;
+  width: 320px;
+  height: 225px;
+  margin-top: 5px;
+}
+
+.photo {
+  position: absolute;
+  width: 135px;
+  height: 185px;
+  border: 5px solid white;
+  border-radius: 22px;
+  box-shadow: 0 8px 25px #0002;
+  display: grid;
+  place-items: center;
+  font-size: 55px;
+}
+
+.photo-one {
+  background: linear-gradient(145deg, #fbcfe8, #a5b4fc);
+  left: 5px;
+  top: 20px;
+  transform: rotate(-9deg);
+}
+
+.photo-two {
+  background: linear-gradient(145deg, #fde68a, #f9a8d4);
+  left: 92px;
+  top: 0;
+  z-index: 2;
+}
+
+.photo-three {
+  background: linear-gradient(145deg, #bae6fd, #c4b5fd);
+  right: 5px;
+  top: 23px;
+  transform: rotate(9deg);
+}
+
+.heart {
+  position: absolute;
+  z-index: 3;
+  left: 15px;
+  bottom: 8px;
+  font-size: 34px;
+}
+
+.tagline {
+  color: #777;
+  margin-top: 10px;
+}
+
+.right-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-box,
+.success-box {
+  width: 100%;
+  max-width: 450px;
+}
+
+.login-box h2,
+.success-box h1 {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.login-box label {
+  display: block;
+  font-size: 14px;
+  margin: 18px 0 8px;
+}
+
+.login-box input {
+  width: 100%;
+  height: 57px;
+  padding: 0 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 15px;
+  outline: none;
+}
+
+.login-box input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px #8b5cf622;
+}
+
+.login-button,
+.create-button,
+.success-box button {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 24px;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-button,
+.success-box button {
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.login-button:hover,
+.success-box button:hover {
+  background: #7c3aed;
+}
+
+.note {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #777;
+  font-size: 13px;
+  margin-top: 32px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+.create-button {
+  background: white;
+  border: 1px solid #8b5cf6;
+  color: #7c3aed;
+}
+
+.success-box {
+  text-align: center;
+  padding: 35px 20px;
+  border: 1px solid #eee;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px #0000000a;
+}
+
+.success-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.success-box p {
+  color: #666;
+  line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .left-panel {
+    min-height: 340px;
+    padding: 70px 20px 20px;
+    border-right: none;
+  }
+
+  .brand {
+    top: 15px;
+    left: 20px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .left-panel h1 {
+    font-size: 25px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .illustration {
+    transform: scale(0.75);
+    height: 175px;
+    margin-top: 0;
+  }
+
+  .tagline {
+    margin-top: -8px;
+  }
+
+  .right-panel {
+    padding: 30px 22px 45px;
+  }
+}
